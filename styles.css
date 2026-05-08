@@ -554,22 +554,21 @@ ul { list-style: none; }
 /* Bento-style services grid — NOT 3 equal columns */
 .services-grid {
   display: grid;
-  grid-template-columns: 1.3fr 1fr 1.1fr;
-  grid-template-rows: auto auto;
-  gap: 16px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
 }
 
 .service-card {
   background: var(--surface);
   border: 1px solid var(--hairline);
   border-radius: 8px;
-  padding: clamp(1.5rem, 3vw, 2.5rem);
+  padding: clamp(1.5rem, 2.5vw, 2rem);
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 14px;
   position: relative;
   overflow: hidden;
-  transition: background 0.25s var(--ease-std), border-color 0.25s var(--ease-std), box-shadow 0.25s var(--ease-std);
+  transition: background 0.25s var(--ease-std), border-color 0.25s var(--ease-std), transform 0.25s var(--ease-out), box-shadow 0.25s var(--ease-out);
 }
 .service-card::before {
   content: '';
@@ -599,18 +598,11 @@ ul { list-style: none; }
 .service-card:hover {
   background: var(--surface-2);
   border-color: var(--hairline-r);
-  box-shadow: 0 4px 16px rgba(0,0,0,0.4), 0 0 0 0 transparent;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4), 0 0 0 1px rgba(220,38,38,0.12);
 }
 .service-card > * { position: relative; z-index: 2; }
 
-/* Featured card — spans 2 rows */
-.service-card.featured {
-  grid-row: span 2;
-}
-.service-card.featured .service-icon-wrap {
-  width: 52px;
-  height: 52px;
-}
 
 .service-icon-wrap {
   width: 44px;
@@ -647,7 +639,6 @@ ul { list-style: none; }
   color: var(--ink-1);
   line-height: 1.1;
 }
-.service-card.featured .service-name { font-size: 1.7rem; }
 
 .service-desc {
   font-size: 0.875rem;
@@ -1511,11 +1502,9 @@ ul { list-style: none; }
   .stat-num { font-size: 1.6rem; }
 
   .services-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 12px;
   }
-  .service-card.featured { grid-row: span 1; }
-  .service-card.featured .service-name { font-size: 1.3rem; }
 
   .packages-grid { grid-template-columns: 1fr; }
 
