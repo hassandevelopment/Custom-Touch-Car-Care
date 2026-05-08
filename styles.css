@@ -1206,6 +1206,107 @@ ul { list-style: none; }
   color: var(--ink-3);
 }
 
+/* ── Review aggregate line ── */
+.review-aggregate {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+  font-size: 0.9rem;
+  color: var(--ink-2);
+  margin-top: 8px;
+}
+.review-stars-big {
+  color: #F59E0B;
+  font-size: 1rem;
+  letter-spacing: 2px;
+}
+
+/* ── Review marquee ── */
+.review-marquee-wrap {
+  position: relative;
+  overflow: hidden;
+  margin: clamp(2rem, 4vw, 3rem) calc(var(--section-pad) * -1) 0;
+  padding: 8px 0 16px;
+}
+.review-marquee-wrap::before,
+.review-marquee-wrap::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 120px;
+  z-index: 2;
+  pointer-events: none;
+}
+.review-marquee-wrap::before {
+  left: 0;
+  background: linear-gradient(to right, var(--surface), transparent);
+}
+.review-marquee-wrap::after {
+  right: 0;
+  background: linear-gradient(to left, var(--surface), transparent);
+}
+.review-track {
+  display: flex;
+  white-space: nowrap;
+}
+.review-inner {
+  display: inline-flex;
+  gap: 16px;
+  padding: 8px 8px 8px 8px;
+  animation: review-scroll 60s linear infinite;
+  flex-shrink: 0;
+}
+.review-inner:hover { animation-play-state: paused; }
+.review-card {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 12px;
+  background: var(--bg);
+  border: 1px solid var(--hairline);
+  border-radius: 8px;
+  padding: 20px 22px;
+  width: 310px;
+  white-space: normal;
+  flex-shrink: 0;
+  vertical-align: top;
+  transition: border-color 0.2s var(--ease-std), box-shadow 0.2s var(--ease-out);
+}
+.review-card:hover {
+  border-color: var(--hairline-r);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+}
+.review-stars {
+  color: #F59E0B;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+}
+.review-text {
+  font-size: 0.85rem;
+  line-height: 1.65;
+  color: var(--ink-2);
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.review-author {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--ink-1);
+  margin-top: auto;
+}
+.review-date {
+  font-weight: 400;
+  color: var(--ink-3);
+}
+
+@keyframes review-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
 /* ── Contact & Location ── */
 #contact {
   padding: var(--section-pad);
