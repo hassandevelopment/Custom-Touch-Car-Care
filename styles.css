@@ -882,8 +882,9 @@ ul { list-style: none; }
   border-top: 1px solid rgba(10,10,10,0.1);
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 12px;
 }
 .brand-strip-label {
   font-size: 0.72rem;
@@ -891,7 +892,10 @@ ul { list-style: none; }
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--ink-light-2);
-  margin-right: 8px;
+  width: 100%;
+  text-align: center;
+  margin-right: 0;
+  margin-bottom: 4px;
 }
 .brand-badge {
   display: inline-flex;
