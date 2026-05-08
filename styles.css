@@ -208,11 +208,13 @@ ul { list-style: none; }
 }
 
 .nav-logo {
-  height: 44px;
+  height: 36px;
   width: auto;
   object-fit: contain;
   flex-shrink: 0;
-  mix-blend-mode: screen;
+  border-radius: 4px;
+  padding: 3px 8px;
+  background: #ffffff;
 }
 
 .nav-links {
@@ -1323,7 +1325,9 @@ ul { list-style: none; }
   width: auto;
   object-fit: contain;
   object-position: left;
-  mix-blend-mode: screen;
+  border-radius: 4px;
+  padding: 4px 10px;
+  background: #ffffff;
 }
 .footer-tagline {
   font-size: 0.875rem;
